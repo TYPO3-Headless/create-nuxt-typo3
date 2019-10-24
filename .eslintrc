@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "@nuxtjs"
+  ],
+  "globals": {
+    "use": true
+  },
+  "rules": {
+    "no-console": "off"
+  }
+}

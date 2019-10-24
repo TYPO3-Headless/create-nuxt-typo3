@@ -1,0 +1,13 @@
+{
+  "name":"project-name",
+  "author":"Author",
+  "description":"My TYPO3 Project",
+  "pm":"yarn",
+  "ui":"none",
+  "server":"express",
+  "features":["pwa","typo"],
+  "linter": ["eslint","prettier"],
+  "test":"jest",
+  "mode":"uniwersal",
+  "devTools":"jsconfig.json"
+}
