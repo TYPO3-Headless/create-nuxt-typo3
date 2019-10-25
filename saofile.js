@@ -17,6 +17,8 @@ module.exports = {
     const esm = this.answers.server === 'none'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
     const typoAPI = this.answers.api
+    const locales = this.answers.locales || []
+    const locale = this.answers.locale
 
     const { cliOptions = {} } = this.sao.opts
     const edge = cliOptions.edge ? '-edge' : ''
@@ -31,7 +33,8 @@ module.exports = {
       esm,
       edge,
       pmRun,
-      typoAPI
+      typoAPI,
+      locales
     }
   },
   actions () {

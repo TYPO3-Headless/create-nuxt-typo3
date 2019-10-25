@@ -129,7 +129,14 @@ module.exports = {
     baseURL: process.env.NUXT_HOST,
     api: {
       baseURL: '<%= typoAPI %>'
+    },
+    <%_ if (locales && locales.length) { _%>
+    i18n: {
+      locales: [<% for (var i = 0; i < locales.length; i++) {%> '<%= locales[i] %>',<% } %>],
+      locale: '<%= locale %>',
+      fallbackLocale: '<%= locale %>'
     }
+    <%_ } _%>
   },
   <%_ } _%>
   <%_ if (axios) { _%>
