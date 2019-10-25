@@ -1,14 +1,21 @@
 <template>
   <div>
     <div class="links">
-      <nuxt-link
-        v-for="(item, key) in navigation"
-        :key="key"
-        :to="item.link"
-        class="simple-link"
-      >
-        {{ item.title }}
+      <nuxt-link :to="navMain.link">
+        {{ navMain.title }}
       </nuxt-link>
+      <template v-if="navMain.children">
+        <nuxt-link
+          v-for="(item, key) in navMain.children"
+          :key="key"
+          :to="item.link"
+        >
+          {{ item.title }}
+        </nuxt-link>
+      </template>
+    </div>
+    <div class="links">
+      <lang-switcher />
     </div>
     <nuxt />
   </div>
@@ -18,7 +25,7 @@ import { mapState } from 'vuex'
 export default {
   computed: {
     ...mapState({
-      navigation: state => state.typo3.initial.navigation
+      navMain: state => state.typo3.initial.navigation[0] || [] // get first instance from root
     })
   }
 }

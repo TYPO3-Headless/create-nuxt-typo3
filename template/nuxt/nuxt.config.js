@@ -123,7 +123,7 @@ module.exports = {
   <%_ if (typo) { _%>
   /*
   ** TYPO3 module configuration
-  ** See https://axios.nuxtjs.org/options
+  ** https://github.com/TYPO3-Initiatives/nuxt-typo3
   */
   typo3: {
     baseURL: process.env.NUXT_HOST,
