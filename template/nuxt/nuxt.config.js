@@ -108,13 +108,13 @@ module.exports = {
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
     <%_ } _%>
-    <%_ if (axios) { _%>
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    <%_ } _%>
     <%_ if (typo) { _%>
     // Doc: https://github.com/TYPO3-Initiatives/nuxt-typo3
     'nuxt-typo3',
+    <%_ } _%>
+    <%_ if (axios) { _%>
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
     <%_ } _%>
     <%_ if (pwa) { _%>
     '@nuxtjs/pwa'
