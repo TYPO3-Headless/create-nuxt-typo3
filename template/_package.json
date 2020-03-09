@@ -30,8 +30,8 @@
     <%_ } _%>
     <%_ if (test === 'ava') { _%>
     "test": "<%= test %>",
-    "test:unit": "cross-env TEST=unit ava --config unit.config.js",
-    "test:e2e": "cross-env TEST=e2e ava --config e2e.config.js",
+    "test:unit": "cross-env TEST=unit ava ./test/specs/**/*",
+    "test:e2e": "cross-env TEST=e2e ava ./test/e2e/**/*",
     <%_ } else if (test !== 'none') { _%>
     "test": "<%= test %>",
     <%_ } _%>
@@ -39,7 +39,12 @@
   },
   <%_ if (lintStaged) { _%>
   "lint-staged": {
-    "*.{js,vue}": "eslint"
+    <%_ if (eslint) { _%>
+    "*.{js,vue}": "<%= pmRun %> lint"<%= stylelint ? "," : "" %>
+    <%_ } _%>
+    <%_ if (stylelint) { _%>
+    "*.{css,vue}": "stylelint"
+    <%_ } _%>
   },
   "husky": {
     "hooks": {
@@ -99,6 +104,8 @@
     "iview": "^3.1.5",
     <%_ } else if (ui === 'framevuerk') { _%>
     "framevuerk": "^2.2.5",
+    <%_ } else if (ui === 'vuesax') { _%>
+    "vuesax": "^4.0.1-alpha.8",
     <%_ } _%>
     <%_ if (axios) { _%>
     "@nuxtjs/axios": "^5.3.6",
@@ -110,6 +117,9 @@
     "nuxt-typo3": "latest",
     <%_
     } _%>
+    <%_ if (dotenv) { _%>
+    "@nuxtjs/dotenv": "^1.4.0",
+    <%_ } _%>
     <%_ if (ui === 'tachyons') { _%>
     "tachyons": "^4.11.1",
     <%_ } _%>
@@ -127,20 +137,24 @@
     "framevuerk-builder": "^2.0.2",
     <%_ } _%>
     <%_ if (eslint) { _%>
-    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     <%_ } _%>
     <%_ if (prettier) { _%>
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.16.4",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1",
     <%_ } _%>
     <%_ if (lintStaged) { _%>
-    "husky": "^2.6.0",
-    "lint-staged": "^8.2.1",
+    "husky": "^4.0.0",
+    "lint-staged": "^10.0.0",
+    <%_ } _%>
+    <%_ if (stylelint) { _%>
+    "@nuxtjs/stylelint-module": "^3.1.0",
+    "stylelint": "^10.1.0",
     <%_ } _%>
     <%_ if (test !== 'none') { _%>
     "@vue/test-utils": "^1.0.0-beta.27",
@@ -150,7 +164,8 @@
     "jest": "^24.1.0",
     "vue-jest": "^4.0.0-0",
     <%_ } else if (test === 'ava') { _%>
-    "ava": "^2.2.0",
+    "ava": "^3.0.0",
+    "@ava/babel": "^1.0.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "browser-env": "^3.2.5",
     "require-extension-hooks": "^0.3.3",
@@ -158,6 +173,5 @@
     "require-extension-hooks-vue": "^2.0.0",
     <%_ } _%>
     "": ""
-
   }
 }

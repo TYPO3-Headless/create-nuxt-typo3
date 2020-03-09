@@ -44,6 +44,7 @@ module.exports = [
       { name: 'iView', value: 'iview' },
       { name: 'Tachyons', value: 'tachyons' },
       { name: 'Tailwind CSS', value: 'tailwind' },
+      { name: 'Vuesax', value: 'vuesax' },
       { name: 'Vuetify.js', value: 'vuetify' }
     ],
     default: 'none'
@@ -73,7 +74,8 @@ module.exports = [
     choices: [
       { name: 'TYPO3', value: 'typo' },
       { name: 'Axios', value: 'axios' },
-      { name: 'Progressive Web App (PWA) Support', value: 'pwa' }
+      { name: 'Progressive Web App (PWA) Support', value: 'pwa' },
+      { name: 'DotEnv', value: 'dotenv' }
     ],
     default: ['typo', 'pwa']
   },
@@ -81,7 +83,7 @@ module.exports = [
     name: 'api',
     message: 'Your TYPO3 API url',
     type: String,
-    default: `https://api.t3pwa.com`
+    default: 'https://api.t3pwa.com'
   },
   {
     name: 'linter',
@@ -91,7 +93,8 @@ module.exports = [
     choices: [
       { name: 'ESLint', value: 'eslint' },
       { name: 'Prettier', value: 'prettier' },
-      { name: 'Lint staged files', value: 'lintStaged' }
+      { name: 'Lint staged files', value: 'lintStaged' },
+      { name: 'StyleLint', value: 'stylelint' }
     ],
     default: []
   },
@@ -121,7 +124,8 @@ module.exports = [
     message: 'Choose development tools',
     type: 'checkbox',
     choices: [
-      { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' }
+      { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' },
+      { name: 'Semantic Pull Requests', value: 'semantic-pull-requests' }
     ],
     default: []
   }

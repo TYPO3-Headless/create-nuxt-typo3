@@ -63,6 +63,8 @@ module.exports = {
     'tachyons/css/tachyons.css'
     <%_ } else if (ui === 'framevuerk') { _%>
     'framevuerk/dist/framevuerk-nuxt.min.css'
+    <%_ } else if (ui === 'vuesax') { _%>
+    'vuesax/dist/vuesax.css'
     <%_ } _%>
   ],
   /*
@@ -77,6 +79,8 @@ module.exports = {
     '@/plugins/antd-ui'
     <%_ } else if (ui === 'framevuerk') { _%>
     '@/plugins/framevuerk'
+    <%_ } else if (ui === 'vuesax') { _%>
+    '@/plugins/vuesax'
     <%_ } _%>
   ],
   /*
@@ -86,6 +90,10 @@ module.exports = {
     <%_ if (eslint) { _%>
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    <%_ } _%>
+    <%_ if (stylelint) { _%>
+    // Doc: https://github.com/nuxt-community/stylelint-module
+    '@nuxtjs/stylelint-module',
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
@@ -117,7 +125,11 @@ module.exports = {
     '@nuxtjs/axios',
     <%_ } _%>
     <%_ if (pwa) { _%>
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    <%_ } _%>
+    <%_ if (dotenv) { _%>
+      // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv'
     <%_ } _%>
   ],
   <%_ if (typo) { _%>

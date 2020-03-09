@@ -19,6 +19,9 @@ module.exports = {
     const typoAPI = this.answers.api
     const locales = this.answers.locales || []
     const locale = this.answers.locale
+    const stylelint = this.answers.linter.includes('stylelint')
+    const dotenv = this.answers.features.includes('dotenv')
+    const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
 
     const { cliOptions = {} } = this.sao.opts
     const edge = cliOptions.edge ? '-edge' : ''
@@ -34,7 +37,10 @@ module.exports = {
       edge,
       pmRun,
       typoAPI,
-      locales
+      locales,
+      stylelint,
+      pm,
+      dotenv
     }
   },
   actions () {
@@ -77,7 +83,7 @@ module.exports = {
         const files = {}
         for (const action of actions) {
           const options = { cwd: join(rootDir, action.templateDir), dot: true }
-          for (const file of glob.sync(`*`, options)) {
+          for (const file of glob.sync('*', options)) {
             files[file] = `resources/${file}`
           }
         }
@@ -100,8 +106,11 @@ module.exports = {
       files: '*',
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
-        '.prettierrc': 'linter.includes("prettier")',
-        'jsconfig.json': 'devTools.includes("jsconfig.json")'
+        '_.prettierrc': 'linter.includes("prettier")',
+        '_jsconfig.json': 'devTools.includes("jsconfig.json")',
+        'semantic.yml': 'devTools.includes("semantic-pull-requests")',
+        '.env': 'features.includes("dotenv")',
+        '_stylelint.config.js': 'linter.includes("stylelint")'
       }
     })
 
@@ -110,7 +119,11 @@ module.exports = {
       patterns: {
         gitignore: '.gitignore',
         '_package.json': 'package.json',
-        '_.eslintrc.js': '.eslintrc.js'
+        '_.prettierrc': '.prettierrc',
+        '_.eslintrc.js': '.eslintrc.js',
+        '_jsconfig.json': 'jsconfig.json',
+        '_stylelint.config.js': 'stylelint.config.js',
+        'semantic.yml': '.github/semantic.yml'
       }
     })
 
