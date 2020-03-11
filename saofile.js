@@ -18,6 +18,7 @@ module.exports = {
     const esm = this.answers.server === 'none'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
     const typoAPI = this.answers.api
+    const certUnsafe = this.answers.cert === 'unsafe'
     const locales = this.answers.locales || []
     const locale = this.answers.locale
     const stylelint = this.answers.linter.includes('stylelint')
@@ -40,9 +41,11 @@ module.exports = {
       pmRun,
       typoAPI,
       locales,
+      locale,
       stylelint,
       pm,
-      dotenv
+      dotenv,
+      certUnsafe
     }
   },
   actions () {

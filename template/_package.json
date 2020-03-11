@@ -6,9 +6,9 @@
   "private": true,
   "scripts": {
     <%_ if (server === 'none') { _%>
-    "dev": "nuxt",
+    "dev": "<%_ if (certUnsafe) { _%>NODE_TLS_REJECT_UNAUTHORIZED=0<%}%> nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "<%_ if (certUnsafe) { _%>NODE_TLS_REJECT_UNAUTHORIZED=0<%}%> nuxt start",
     "generate": "nuxt generate",
     <%_ } else if (server === 'adonis') { _%>
     "serve:dev": "<%= pmRun %> dev",
