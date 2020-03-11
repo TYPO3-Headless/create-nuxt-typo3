@@ -48,7 +48,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#ff8700' },
   /*
   ** Global CSS
   */
@@ -115,6 +115,10 @@ module.exports = {
     <%_ } else if (ui === 'buefy') { _%>
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
+    <%_ } _%>
+    <%_ if (skin) { _%>
+    // Doc: https://github.com/mercs600/nuxt-typo3-skin
+    'nuxt-typo3-skin',
     <%_ } _%>
     <%_ if (typo) { _%>
     // Doc: https://github.com/TYPO3-Initiatives/nuxt-typo3

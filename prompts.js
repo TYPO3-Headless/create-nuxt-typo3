@@ -9,7 +9,7 @@ module.exports = [
   {
     name: 'description',
     message: 'Project description',
-    default: `My ${random()} Nuxt.js project`
+    default: `My ${random()} TYPO3 Nuxt.js project`
   },
   {
     name: 'author',
@@ -73,11 +73,12 @@ module.exports = [
     pageSize: 10,
     choices: [
       { name: 'TYPO3', value: 'typo' },
+      { name: 'TYPO3 Skin', value: 'skin' },
       { name: 'Axios', value: 'axios' },
       { name: 'Progressive Web App (PWA) Support', value: 'pwa' },
       { name: 'DotEnv', value: 'dotenv' }
     ],
-    default: ['typo', 'pwa']
+    default: ['typo', 'skin', 'pwa']
   },
   {
     name: 'api',

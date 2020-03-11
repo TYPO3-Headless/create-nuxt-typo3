@@ -14,6 +14,7 @@ module.exports = {
     const lintStaged = eslint && this.answers.linter.includes('lintStaged')
     const axios = this.answers.features.includes('axios')
     const typo = this.answers.features.includes('typo')
+    const skin = this.answers.features.includes('skin')
     const esm = this.answers.server === 'none'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
     const typoAPI = this.answers.api
@@ -33,6 +34,7 @@ module.exports = {
       lintStaged,
       axios,
       typo,
+      skin,
       esm,
       edge,
       pmRun,

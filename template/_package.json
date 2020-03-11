@@ -117,6 +117,10 @@
     "nuxt-typo3": "latest",
     <%_
     } _%>
+    <%_ if (skin) { _%>
+    "nuxt-typo3-skin": "latest",
+    <%_
+    } _%>
     <%_ if (dotenv) { _%>
     "@nuxtjs/dotenv": "^1.4.0",
     <%_ } _%>
