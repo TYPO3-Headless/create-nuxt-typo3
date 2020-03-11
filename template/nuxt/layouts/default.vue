@@ -55,7 +55,7 @@ export default {
   computed: {
     ...mapState({
       navMain: state => state.typo3.initial.navigation[0] || [], // get first instance from root tree,
-      breadcrumbs: state => state.typo3.page.page.breadcrumbs || [], // get breadcrumbs for current page,
+      breadcrumbs: state => state.typo3.page.page ? state.typo3.page.page.breadcrumbs : [], // get breadcrumbs for current page,
       currentLanguage: state => state.typo3.locale,
       availableLanguages: state => state.typo3.page.languages
     })
