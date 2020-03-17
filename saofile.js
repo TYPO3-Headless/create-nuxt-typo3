@@ -8,6 +8,8 @@ const rootDir = __dirname
 module.exports = {
   prompts: require('./prompts'),
   templateData () {
+    const typescript = this.answers.language.includes('ts')
+    const tsRuntime = this.answers.runtime && this.answers.runtime.includes('ts-runtime')
     const pwa = this.answers.features.includes('pwa')
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
@@ -29,6 +31,8 @@ module.exports = {
     const edge = cliOptions.edge ? '-edge' : ''
 
     return {
+      typescript,
+      tsRuntime,
       pwa,
       eslint,
       prettier,
@@ -99,6 +103,7 @@ module.exports = {
           patterns: files
         })
       }
+
       actions.push({
         type: 'add',
         files: '**',
@@ -113,6 +118,7 @@ module.exports = {
         '_.eslintrc.js': 'linter.includes("eslint")',
         '_.prettierrc': 'linter.includes("prettier")',
         '_jsconfig.json': 'devTools.includes("jsconfig.json")',
+        'tsconfig.json': 'language.includes("ts")',
         'semantic.yml': 'devTools.includes("semantic-pull-requests")',
         '.env': 'features.includes("dotenv")',
         '_stylelint.config.js': 'linter.includes("stylelint")'
@@ -179,6 +185,10 @@ module.exports = {
     if (this.answers.test !== 'none') {
       console.log(chalk`  {bold To test:}\n`)
       console.log(chalk`${cdMsg}\t{cyan ${pmRun} test}\n`)
+    }
+
+    if (this.answers.language.includes('ts')) {
+      console.log(chalk`\n  {bold For TypeScript users.} \n\n  See : https://typescript.nuxtjs.org/cookbook/components/`)
     }
   }
 }
