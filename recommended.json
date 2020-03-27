@@ -5,12 +5,14 @@
   "pm": "yarn",
   "ui": "none",
   "server": "none",
+  "language": "js",
   "features": ["pwa","typo","skin"],
   "linter": ["eslint","prettier"],
   "test": "jest",
   "mode": "universal",
   "devTools": "jsconfig.json",
   "api": "https://pwa-demo.ddev.site/api",
-  "locales":["en"],
+  "cert": "unsafe",
+  "locales":["en","de"],
   "locale":["en"]
 }
