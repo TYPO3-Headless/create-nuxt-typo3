@@ -16,7 +16,6 @@ export default {
 <%_ } else { _%>
 module.exports = {
 <%_ } _%>
-  mode: '<%= mode %>',
   <%_ if (server === 'adonis') { _%>
   dev: process.env.NODE_ENV === 'development',
   srcDir: resolve(__dirname, '..', 'resources'),
