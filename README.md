@@ -6,7 +6,7 @@
 
 > Create a [Nuxt.js](https://github.com/nuxt/nuxt.js) project in seconds
 
-This is fork of nuxt-create-app
+This is a fork of [create-nuxt-app](https://www.npmjs.com/package/create-nuxt-app)
 
 <details><summary>Preview</summary>
 
