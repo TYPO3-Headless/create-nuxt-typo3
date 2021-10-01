@@ -86,12 +86,20 @@ module.exports = {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    <%_ if (typescript) {_%>
+    <%_ if (typescript || skin) {_%>
     '@nuxt/typescript-build',
     <%_ } _%>
     <%_ if (eslint && !typescript) { _%>
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    <%_ } _%>
+    <%_ if (skin) { _%>
+    // Doc: https://github.com/macopedia/nuxt-typo3-theme
+    'nuxt-typo3-theme',
+    <%_ } _%>
+    <%_ if (typo) { _%>
+    // Doc: https://github.com/TYPO3-Initiatives/nuxt-typo3
+    'nuxt-typo3',
     <%_ } _%>
     <%_ if (stylelint) { _%>
     // Doc: https://github.com/nuxt-community/stylelint-module
@@ -117,14 +125,6 @@ module.exports = {
     <%_ } else if (ui === 'buefy') { _%>
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    <%_ } _%>
-    <%_ if (skin) { _%>
-    // Doc: https://github.com/mercs600/nuxt-typo3-skin
-    'nuxt-typo3-skin',
-    <%_ } _%>
-    <%_ if (typo) { _%>
-    // Doc: https://github.com/TYPO3-Initiatives/nuxt-typo3
-    'nuxt-typo3',
     <%_ } _%>
     <%_ if (axios) { _%>
     // Doc: https://axios.nuxtjs.org/usage

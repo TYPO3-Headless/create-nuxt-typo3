@@ -128,7 +128,10 @@
     <%_
     } _%>
     <%_ if (skin) { _%>
-    "nuxt-typo3-skin": "latest",
+    "nuxt-typo3-theme": "latest",
+    "fibers": "^5.0.0",
+    "sass": "^1.42.1",
+    "sass-loader": "10",
     <%_
     } _%>
     <%_ if (dotenv) { _%>
@@ -143,7 +146,7 @@
     <%_ if (server !== 'none') { _%>
     "nodemon": "^1.18.9",
     <%_ } _%>
-    <%_ if (typescript) { _%>
+    <%_ if (typescript || skin) { _%>
     "@nuxt/typescript-build": "^0.6.0",
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>

@@ -25,7 +25,9 @@
     },
     "types": [
       "@types/node",
-      "@nuxt/types"
+      "@nuxt/types",
+      "nuxt-typo3",
+      "nuxt-typo3-theme"
     ]
   },
   "exclude": [

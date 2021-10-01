@@ -118,7 +118,7 @@ module.exports = {
         '_.eslintrc.js': 'linter.includes("eslint")',
         '_.prettierrc': 'linter.includes("prettier")',
         '_jsconfig.json': 'devTools.includes("jsconfig.json")',
-        'tsconfig.json': 'language.includes("ts")',
+        'tsconfig.json': 'language.includes("ts") || features.includes("skin")',
         'semantic.yml': 'devTools.includes("semantic-pull-requests")',
         '.env': 'features.includes("dotenv")',
         '_stylelint.config.js': 'linter.includes("stylelint")'
