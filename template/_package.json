@@ -129,7 +129,6 @@
     } _%>
     <%_ if (skin) { _%>
     "nuxt-typo3-theme": "latest",
-    "fibers": "^5.0.0",
     "sass": "^1.42.1",
     "sass-loader": "10",
     <%_
