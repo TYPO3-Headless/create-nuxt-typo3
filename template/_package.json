@@ -124,7 +124,7 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     <%_ } _%>
     <%_ if (typo) { _%>
-    "nuxt-typo3": "latest",
+    "nuxt-typo3": "<%= typoVersion %>",
     <%_
     } _%>
     <%_ if (skin) { _%>

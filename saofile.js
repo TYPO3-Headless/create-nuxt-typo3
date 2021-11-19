@@ -16,6 +16,7 @@ module.exports = {
     const lintStaged = eslint && this.answers.linter.includes('lintStaged')
     const axios = this.answers.features.includes('axios')
     const typo = this.answers.features.includes('typo')
+    const typoVersion = this.answers.typoVersion || 'latest'
     const skin = this.answers.features.includes('skin')
     const esm = this.answers.server === 'none'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
@@ -49,7 +50,8 @@ module.exports = {
       stylelint,
       pm,
       dotenv,
-      certUnsafe
+      certUnsafe,
+      typoVersion
     }
   },
   actions () {

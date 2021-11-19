@@ -145,6 +145,7 @@ module.exports = {
   */
   typo3: {
     baseURL: process.env.NUXT_HOST,
+    forms: true,
     api: {
       baseURL: '<%= typoAPI %>'
     },
