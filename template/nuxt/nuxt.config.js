@@ -86,7 +86,7 @@ module.exports = {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    <%_ if (typescript || skin) {_%>
+    <%_ if (typescript) {_%>
     '@nuxt/typescript-build',
     <%_ } _%>
     <%_ if (eslint && !typescript) { _%>
@@ -95,7 +95,7 @@ module.exports = {
     <%_ } _%>
     <%_ if (skin) { _%>
     // Doc: https://github.com/macopedia/nuxt-typo3-theme
-    'nuxt-typo3-theme',
+    'nuxt-typo3-tailwind',
     <%_ } _%>
     <%_ if (typo) { _%>
     // Doc: https://github.com/TYPO3-Initiatives/nuxt-typo3
@@ -156,6 +156,11 @@ module.exports = {
       fallbackLocale: '<%= locale %>'
     }
     <%_ } _%>
+  },
+  <%_ } _%>
+  <%_ if (skin) { _%>
+  typo3tailwind: {
+    layouts: false
   },
   <%_ } _%>
   <%_ if (axios) { _%>

@@ -93,7 +93,7 @@ module.exports = [
     pageSize: 10,
     choices: [
       { name: 'TYPO3', value: 'typo' },
-      { name: 'TYPO3 Skin', value: 'skin' },
+      { name: 'TYPO3 Tailwind', value: 'skin' },
       { name: 'Axios', value: 'axios' },
       { name: 'Progressive Web App (PWA) Support', value: 'pwa' },
       { name: 'DotEnv', value: 'dotenv' }
