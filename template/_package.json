@@ -197,5 +197,8 @@
     "require-extension-hooks-vue": "^2.0.0",
     <%_ } _%>
     "": ""
+  },
+  "resolutions": {
+    "@nuxt/kit": "3.0.0-rc.13"
   }
 }
