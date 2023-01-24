@@ -20,6 +20,7 @@ module.exports = {
   dev: process.env.NODE_ENV === 'development',
   srcDir: resolve(__dirname, '..', 'resources'),
   <%_ } _%>
+  components: true,
   /*
   ** Headers of the page
   */
